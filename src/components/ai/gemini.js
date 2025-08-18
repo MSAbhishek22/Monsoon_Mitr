@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCHQKSrOodgcOIXENjqQwfLefuO4DJJ6MA"
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY
 
 const MODELS = [
   'gemini-1.5-flash-latest',
@@ -9,11 +9,10 @@ const MODELS = [
 function buildPrompt(question) {
   return [
     'आप एक कृषि सहायक हैं। हमेशा साधारण भाषा में उत्तर दें।',
-    'फॉर्मैट सख्ती से यह रखें:',
-    '1) पहली पंक्ति: एक-वाक्य निष्कर्ष (जैसे “✅ पानी दें” या “⛔ पानी न दें”).',
-    '2) अगली पंक्तियाँ: 3–6 बिंदु, प्रत्येक नई पंक्ति में “- ” के साथ।',
-    '3) अनावश्यक लंबी बात नहीं, कोई मार्कडाउन/टेबल नहीं।',
-    '4) उपयोगकर्ता जिस भाषा में पूछे, उसी भाषा में उत्तर दें (English/Hindi/Hinglish). अगर मिलीजुली भाषा हो तो हिंदी में उत्तर दें।',
+    'फॉर्मैट:',
+    '1) पहली पंक्ति: एक-वाक्य निष्कर्ष (✅/⛔).',
+    '2) 3–6 बुलेट्स, प्रत्येक नई पंक्ति "- " से.',
+    '3) उपयोगकर्ता की भाषा (Hindi/English/Hinglish) में उत्तर.',
     'प्रश्न:',
     question
   ].join('\n')
@@ -22,11 +21,7 @@ function buildPrompt(question) {
 async function callModel(model, question) {
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`
   const body = { contents: [ { role: 'user', parts: [ { text: buildPrompt(question) } ] } ] }
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body)
-  })
+  const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
   if (!res.ok) {
     const text = await res.text().catch(() => '')
     throw new Error(`HTTP ${res.status}${text ? `: ${text.slice(0,120)}` : ''}`)
@@ -39,23 +34,20 @@ async function callModel(model, question) {
 export async function askGemini(question) {
   try {
     if (!question || !question.trim()) return ''
-    if (!navigator.onLine) {
-      return 'आप ऑफलाइन हैं, आखिरी सलाह दिखाई जा रही है'
-    }
+    if (!navigator.onLine) return 'आप ऑफलाइन हैं, आखिरी सलाह दिखाई जा रही है'
+    if (!API_KEY) return '⚠️ कॉन्फ़िगरेशन आवश्यक: VITE_GEMINI_API_KEY सेट नहीं है.'
 
     let lastErr = null
     for (const model of MODELS) {
       try {
         const out = await callModel(model, question)
         if (out) return out
-      } catch (e) {
-        lastErr = e
-      }
+      } catch (e) { lastErr = e }
     }
     if (lastErr) throw lastErr
     return 'यह सुविधा जल्द ही आ रही है'
   } catch (err) {
     console.warn('Gemini error:', err)
-    return `⚠️ AI त्रुटि: सेवा उपलब्ध नहीं है (कृपया बाद में प्रयास करें)`
+    return '⚠️ AI सेवा अस्थायी रूप से उपलब्ध नहीं है'
   }
 }
