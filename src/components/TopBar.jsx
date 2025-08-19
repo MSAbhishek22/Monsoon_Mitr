@@ -17,8 +17,8 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
   return (
     <div className={`mobile-nav sticky top-0 z-50 backdrop-blur-md border-b ${ theme === 'light' ? 'bg-white/80 border-gray-200' : 'bg-gray-900/80 border-gray-700' }`}>
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4 flex-1">
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center space-x-4 flex-1 min-w-0">
             <div className="flex-shrink-0">
               <h1 className={`mobile-heading title-underline ${ theme === 'light' ? 'text-farmer-dark' : 'text-white' }`}>
                 <span className="farmer-icon-large">🌾</span> {language === 'HI' ? 'मॉनसून मित्र' : 'Monsoon Mitra'}
@@ -30,7 +30,7 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
             </div>
           </div>
 
-          <div className="flex items-center space-x-3 relative">
+          <div className="flex items-center space-x-3 relative flex-shrink-0">
             {/* Enhanced online/offline indicator */}
             <div 
               className={`w-4 h-4 rounded-full transition-all duration-300 ${ isOffline ? 'bg-red-500 animate-pulse' : 'bg-green-500' }`} 
@@ -40,7 +40,7 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
               aria-live="polite"
             ></div>
             
-            <InstallPWA language={language} theme={theme} />
+            <InstallPWA language={language} theme={theme} compact />
             
             {/* Button Container for Better Spacing */}
             <div className="top-bar-buttons">
