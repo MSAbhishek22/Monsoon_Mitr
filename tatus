@@ -1,0 +1,5 @@
+[33mcaaacf3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m docs(readme): farmer-first overview, features, images, setup, deploy, and credits
+[33m2c4042d[m docs: add architecture and flowchart images to README
+[33m2789c66[m chore(security): move Gemini API key to VITE_GEMINI_API_KEY and ignore .env
+[33m6fe2dcd[m feat(ui,ai,offline): green farmer theme, unified AI chat, Hindi TTS, voice modal, offline answers, crop info scroller, chart & accessibility polish
+[33me6c3881[m Add comprehensive README and project assets
