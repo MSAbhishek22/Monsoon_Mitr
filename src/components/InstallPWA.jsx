@@ -60,15 +60,19 @@ const InstallPWA = ({ language, theme }) => {
   return (
     <button
       onClick={handleInstallClick}
-      className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95 ${
+      className={`farmer-touch-target rounded-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95 farmer-focus-visible farmer-haptic ${
         theme === 'light'
-          ? 'bg-farmer-green hover:bg-farmer-light-green text-white shadow-md hover:shadow-lg'
-          : 'bg-farmer-light-green hover:bg-farmer-green text-farmer-dark shadow-md hover:shadow-lg'
+          ? 'bg-farmer-green hover:bg-farmer-light-green text-white shadow-md hover:shadow-lg farmer-outdoor-visible'
+          : 'bg-farmer-light-green hover:bg-farmer-green text-farmer-dark shadow-md hover:shadow-lg farmer-outdoor-visible'
       }`}
       title={language === 'HI' ? 'होम स्क्रीन पर इंस्टॉल करें' : 'Install on home screen'}
       aria-label={language === 'HI' ? 'ऐप इंस्टॉल करें' : 'Install app'}
+      aria-describedby="install-help"
     >
-      {getButtonText()}
+      <span className="farmer-icon-large">📱</span> {getButtonText()}
+      <span id="install-help" className="sr-only">
+        {language === 'HI' ? 'इस ऐप को अपने फोन के होम स्क्रीन पर इंस्टॉल करें ताकि आप इसे बिना ब्राउज़र खोले इस्तेमाल कर सकें' : 'Install this app on your phone home screen so you can use it without opening the browser'}
+      </span>
     </button>
   )
 }

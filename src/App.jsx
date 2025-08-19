@@ -3,9 +3,8 @@ import TopBar from './components/TopBar'
 import WeatherCard from './components/WeatherCard'
 import RecommendationCard from './components/RecommendationCard'
 import SavingsCard from './components/SavingsCard'
-import CropSelector from './components/CropSelector'
+import UnifiedCropSection from './components/UnifiedCropSection'
 import StageSelector from './components/StageSelector'
-import CropInfoCard from './components/CropInfoCard'
 import EmergencyAlert from './components/EmergencyAlert'
 import VoiceInput from './components/VoiceInput'
 // Lazy load AI Sahayak
@@ -214,8 +213,15 @@ function App() {
         <div className="mb-8">
           <StageSelector language={language} theme={theme} onLocationChange={handleLocationChange} />
         </div>
+        
+        {/* Unified Crop Section - Combines selection and information */}
         <div className="mb-8">
-          <CropSelector selectedCrop={selectedCrop} onCropChange={setSelectedCrop} language={language} theme={theme} />
+          <UnifiedCropSection 
+            selectedCrop={selectedCrop} 
+            onCropChange={setSelectedCrop} 
+            language={language} 
+            theme={theme} 
+          />
         </div>
 
         <div className="mobile-grid lg:desktop-grid">
@@ -229,9 +235,7 @@ function App() {
           </div>
         </div>
 
-        <div className="mobile-grid lg:grid-cols-3 mt-8 gap-6">
-          <CropInfoCard selectedCrop={selectedCrop} language={language} theme={theme} />
-        </div>
+        {/* Removed separate CropInfoCard since it's now integrated */}
 
         {showVoiceInput && (
           <VoiceInput onClose={() => setShowVoiceInput(false)} onSubmit={() => {}} language={language} theme={theme} />

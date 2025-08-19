@@ -125,6 +125,49 @@ Optional SPA rewrite (create `vercel.json` at repo root):
 - Large type and ≥56px touch targets
 - Online/offline indicator; PWA install prompt
 
+### 🌾 Farmer-Focused Accessibility Features
+
+**Enhanced Touch Targets:**
+- **72px minimum** touch targets (increased from 56px) for farmers with calloused hands
+- **80px minimum** on very small screens (≤480px)
+- Enhanced visual feedback with borders and shadows
+
+**Icon Accessibility:**
+- **48px minimum** icon sizes with better contrast
+- **64px+** for critical actions like voice input
+- High contrast mode for outdoor visibility
+- Voice command indicators (🎤) on voice-enabled elements
+
+**Outdoor & High Contrast Modes:**
+- **Outdoor Mode**: Black background with white text for bright sunlight
+- **High Contrast Mode**: Maximum contrast with enhanced borders and shadows
+- **Large Text Mode**: 25% larger text throughout the app
+- Enhanced shadows and borders for better visibility
+
+**Voice & Haptic Features:**
+- **Voice Prompts**: Audio instructions for all major actions
+- **Haptic Feedback**: Visual feedback simulating touch response
+- **Speech Recognition**: Hindi/English voice input with fallback to typing
+- **Text-to-Speech**: Listen to AI responses in Hindi
+
+**Accessibility Settings Panel:**
+- Easy access via ♿ button in top navigation
+- Toggle switches for all accessibility features
+- Settings persist across sessions
+- Reset to default option
+
+**Screen Reader Support:**
+- Proper ARIA labels and descriptions
+- Semantic HTML structure
+- Focus management for keyboard navigation
+- Status announcements for online/offline state
+
+**Mobile-First Design:**
+- Optimized for low-end Android devices
+- Works offline with cached weather data
+- PWA installation for home screen access
+- Responsive design for all screen sizes
+
 ---
 
 ## 📂 Project Structure (frontend)
