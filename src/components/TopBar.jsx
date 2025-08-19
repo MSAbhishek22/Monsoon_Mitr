@@ -47,11 +47,11 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
               {/* Weather Alerts Button - Red Siren */}
               <button
                 onClick={() => console.log('Weather Alerts Clicked!')} // Placeholder for weather alert logic
-                className="weather-alert-button farmer-touch-target farmer-focus-visible farmer-haptic farmer-icon text-white rounded-lg transition-all duration-300"
+                className="weather-alert-button topbar-compact-btn farmer-focus-visible farmer-haptic text-white rounded-lg transition-all duration-300"
                 aria-label={language === 'HI' ? 'मौसम चेतावनी' : 'Weather Alerts'}
                 title={language === 'HI' ? 'मौसम चेतावनी' : 'Weather Alerts'}
               >
-                🚨
+                <span className="topbar-icon">🚨</span>
                 <span className="sr-only">
                   {language === 'HI' ? 'मौसम चेतावनी' : 'Weather Alerts'}
                 </span>
@@ -60,11 +60,11 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
               {/* Accessibility Settings Button - Blue */}
               <button
                 onClick={() => setShowAccessibility(true)}
-                className="accessibility-button farmer-touch-target farmer-focus-visible farmer-haptic farmer-icon text-white rounded-lg transition-all duration-300"
+                className="accessibility-button topbar-compact-btn farmer-focus-visible farmer-haptic text-white rounded-lg transition-all duration-300"
                 aria-label={language === 'HI' ? 'सुलभता सेटिंग्स' : 'Accessibility Settings'}
                 title={language === 'HI' ? 'सुलभता सेटिंग्स' : 'Accessibility Settings'}
               >
-                ♿
+                <span className="topbar-icon">♿</span>
                 <span className="sr-only">
                   {language === 'HI' ? 'सुलभता सेटिंग्स' : 'Accessibility Settings'}
                 </span>
@@ -74,25 +74,25 @@ const TopBar = ({ language, onLanguageToggle, theme, onThemeToggle, onLocationCh
             {/* Enhanced theme toggle */}
             <button 
               onClick={onThemeToggle} 
-              className={`farmer-touch-target p-2 rounded-lg farmer-focus-visible farmer-haptic ${ theme === 'light' ? 'bg-green-50 hover:bg-green-100 text-green-700' : 'bg-green-900/30 hover:bg-green-900/50 text-green-200' }`} 
+              className={`topbar-compact-btn rounded-lg farmer-focus-visible farmer-haptic ${ theme === 'light' ? 'bg-green-50 hover:bg-green-100 text-green-700' : 'bg-green-900/30 hover:bg-green-900/50 text-green-200' }`} 
               title={theme === 'light' ? (language === 'HI' ? 'डार्क मोड' : 'Dark mode') : (language === 'HI' ? 'लाइट मोड' : 'Light mode')} 
               aria-label={theme === 'light' ? (language === 'HI' ? 'डार्क मोड में बदलें' : 'Switch to dark mode') : (language === 'HI' ? 'लाइट मोड में बदलें' : 'Switch to light mode')}
             >
-              <span className="farmer-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
+              <span className="topbar-icon">{theme === 'light' ? '🌙' : '☀️'}</span>
             </button>
             
             {/* Enhanced language selector */}
             <div className="relative">
               <button 
                 onClick={() => setOpenLang(!openLang)} 
-                className={`farmer-touch-target px-3 py-2 rounded-lg font-medium farmer-focus-visible farmer-haptic ${ theme === 'light' ? 'btn-green' : 'btn-green' }`} 
+                className={`topbar-compact-btn px-3 rounded-lg font-medium farmer-focus-visible farmer-haptic ${ theme === 'light' ? 'btn-green' : 'btn-green' }`} 
                 title={language === 'HI' ? 'भाषा बदलें' : 'Change language'} 
                 aria-label={language === 'HI' ? 'भाषा बदलें' : 'Change language'}
                 aria-expanded={openLang}
                 aria-haspopup="true"
                 aria-describedby="language-menu"
               >
-                <span className="farmer-icon">🌐</span> {language === 'HI' ? 'भाषा बदलें' : 'Change Language'}
+                <span className="topbar-icon">🌐</span> <span className="hidden sm:inline">{language === 'HI' ? 'भाषा बदलें' : 'Change Language'}</span>
               </button>
               {openLang && (
                 <div 

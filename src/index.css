@@ -555,6 +555,27 @@
     gap: 0.5rem;
     flex-wrap: wrap;
   }
+
+  /* Compact controls for top bar on small screens */
+  .topbar-compact-btn {
+    padding: 0.5rem 0.6rem;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 0.75rem;
+    line-height: 1;
+  }
+
+  .topbar-icon {
+    font-size: 1.5rem; /* ~24px */
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px) {
+    .topbar-icon { font-size: 1.75rem; }
+  }
   
   .weather-alert-button {
     background: linear-gradient(135deg, #ef4444, #dc2626);
@@ -602,8 +623,7 @@
     
     .weather-alert-button,
     .accessibility-button {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.875rem;
+      padding: 0.5rem 0.5rem;
       min-height: 44px;
       min-width: 44px;
     }
