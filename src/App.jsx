@@ -7,6 +7,7 @@ import UnifiedCropSection from './components/UnifiedCropSection'
 import StageSelector from './components/StageSelector'
 import EmergencyAlert from './components/EmergencyAlert'
 import VoiceInput from './components/VoiceInput'
+import FarmerHook from './components/FarmerHook'
 // Lazy load AI Sahayak
 const AISahayak = React.lazy(() => import('./components/ai/AISahayak'))
 import { fetchOpenMeteo } from './api/providers/openMeteo'
@@ -201,14 +202,7 @@ function App() {
           isOffline={isOffline}
         />
 
-        <div className="text-center mb-8 mt-8">
-          <h2 className={`mobile-heading ${theme === 'light' ? 'text-farmer-dark' : 'text-white'}`}>
-            {language === 'HI' ? 'नमस्ते किसान भाई 👋' : 'Hello Farmer 👋'}
-          </h2>
-          <p className={`mobile-text ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
-            {language === 'HI' ? 'आज का मौसम ये है...' : "Today's weather..."}
-          </p>
-        </div>
+        <FarmerHook language={language} theme={theme} />
 
         <div className="mb-8">
           <StageSelector language={language} theme={theme} onLocationChange={handleLocationChange} />

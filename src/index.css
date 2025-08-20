@@ -117,6 +117,199 @@
     line-height: 1.3; /* Tighter line height for headings */
   }
   
+  /* Enhanced hook component styles for better mobile experience */
+  .hook-container {
+    @apply text-center mb-8 mt-8;
+    animation: fadeIn 0.8s ease-in-out;
+    /* Ensure proper spacing on all devices */
+    padding: 0 0.5rem;
+  }
+  
+  .hook-main-title {
+    @apply font-bold leading-tight mb-4 md:mb-6;
+    font-size: clamp(1.25rem, 5vw, 3rem); /* Optimized for very small screens */
+    line-height: 1.2; /* Optimized line height */
+    /* Better readability on small screens */
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .hook-subtitle {
+    @apply font-semibold mb-4 md:mb-6;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    line-height: 1.4;
+  }
+  
+  .hook-points-grid {
+    @apply grid gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-6 md:mb-8;
+    /* Responsive grid that works on all screen sizes */
+    grid-template-columns: 1fr;
+  }
+  
+  /* Small screens: single column */
+  @media (min-width: 480px) {
+    .hook-points-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Medium screens: two columns with better spacing */
+  @media (min-width: 768px) {
+    .hook-points-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Large screens: two columns with maximum spacing */
+  @media (min-width: 1024px) {
+    .hook-points-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  .hook-point-item {
+    @apply flex items-center p-2 sm:p-3 rounded-lg transition-all duration-200;
+    min-height: 60px; /* Better touch targets */
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
+    /* Ensure proper alignment on all devices */
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Very small screens: center align text */
+  @media (max-width: 480px) {
+    .hook-point-item {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  
+  .hook-benefit {
+    @apply font-bold mb-4 md:mb-6 p-3 sm:p-4 rounded-xl shadow-lg;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    min-height: 70px; /* Better touch targets */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Better mobile padding */
+    padding: 1rem 1.5rem;
+    /* Ensure text doesn't overflow */
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  .hook-cta {
+    @apply font-bold p-3 sm:p-4 rounded-xl shadow-xl transform transition-all duration-300 cursor-pointer select-none;
+    font-size: clamp(1.125rem, 4.5vw, 1.75rem);
+    min-height: 80px; /* Better touch targets */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Better mobile padding */
+    padding: 1.25rem 2rem;
+    /* Ensure text doesn't overflow */
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
+  /* Enhanced animations for hook elements */
+  .hook-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hook-point-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .hook-cta:hover {
+      transform: none;
+    }
+    
+    .hook-point-item:hover {
+      transform: none;
+    }
+    
+    .hook-cta:active {
+      transform: scale(0.98);
+    }
+    
+    .hook-point-item:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  /* Ultra-small screen optimizations */
+  @media (max-width: 360px) {
+    .hook-container {
+      padding: 0 0.25rem;
+    }
+    
+    .hook-main-title {
+      font-size: clamp(1rem, 4.5vw, 1.5rem);
+      margin-bottom: 1rem;
+    }
+    
+    .hook-subtitle {
+      font-size: clamp(0.875rem, 3vw, 1.25rem);
+      margin-bottom: 1rem;
+    }
+    
+    .hook-points-grid {
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hook-point-item {
+      min-height: 50px;
+      font-size: clamp(0.75rem, 2.5vw, 1rem);
+      padding: 0.75rem;
+    }
+    
+    .hook-benefit {
+      min-height: 60px;
+      font-size: clamp(0.875rem, 3.5vw, 1.25rem);
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+    }
+    
+    .hook-cta {
+      min-height: 70px;
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      padding: 1rem 1.5rem;
+    }
+  }
+  
+  /* Landscape orientation optimizations for mobile */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hook-container {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .hook-main-title {
+      margin-bottom: 0.75rem;
+    }
+    
+    .hook-subtitle {
+      margin-bottom: 0.75rem;
+    }
+    
+    .hook-points-grid {
+      margin-bottom: 1rem;
+    }
+    
+    .hook-benefit {
+      margin-bottom: 0.75rem;
+    }
+  }
+  
   /* Better touch targets for mobile - CRITICAL for low-end devices */
   .touch-target {
     min-height: 56px; /* Increased from 48px */
