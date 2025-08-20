@@ -4,11 +4,11 @@
 
 ## 🌱 Our Story
 
-I come from a farming family. I've witnessed firsthand how a sudden downpour can wash away months of hard work, or how missing a crucial irrigation window can devastate an entire harvest. My grandfather would wake up at 4 AM to check the sky, trying to predict if it would rain that day. My father would spend hours listening to weather forecasts on the radio, hoping to make the right decision about when to water the crops.
+I come from a farming family. I've witnessed firsthand how a sudden downpour can wash away months of hard work, or how missing a crucial irrigation window can devastate an entire harvest. My grandfather would wake up at 4 AM to check the sky, trying to predict if it would rain that day.
 
 **Monsoon Mitra was born from these memories** – from the pain of watching precious water go to waste, from the anxiety of not knowing what tomorrow's weather would bring, and from the dream of making farming easier for every farmer in India.
 
-Today, Monsoon Mitra stands as a beacon of hope, offering **weather-aware irrigation advice in local languages, even without internet**. It's built farmer-first, with a simple, intuitive interface that even the least tech-savvy farmer can use with confidence.
+Today, Monsoon Mitra offers **weather-aware irrigation advice in local languages, even without internet**. It's built farmer-first, with a simple, intuitive interface that even the least tech-savvy farmer can use with confidence.
 
 🔗 **Live Demo**: https://monsoonmitra.vercel.app
 
@@ -45,25 +45,19 @@ This hook speaks directly to every farmer's heart – it's about saving money, p
 
 ---
 
-## ✨ Features That Make a Difference
+## ✨ Key Features
 
 ### 🌦️ **Smart Weather Intelligence**
 - **Live Weather Data**: Real-time updates from Open-Meteo
 - **7-Day Forecast**: Plan your week with confidence
 - **Rainfall Predictions**: Know exactly when rain is coming
-- **Temperature Alerts**: Stay informed about extreme weather
+- **Emergency Alerts**: Flood, drought, and harvest risk warnings
 
 ### 🤖 **AI Sahayak – Your Digital Farming Assistant**
 - **Natural Conversations**: Ask questions in Hindi, English, or Hinglish
 - **Voice Commands**: Speak to your phone like talking to a friend
 - **Smart Recommendations**: Get personalized advice for your crops
 - **Offline Intelligence**: Works even without internet connection
-
-### 🔊 **Voice-First Experience**
-- **Hindi Text-to-Speech**: Listen to answers in your language
-- **Voice Input**: Speak instead of typing
-- **Audio Alerts**: Important notifications you can hear
-- **Accessibility First**: Designed for farmers with vision difficulties
 
 ### 💰 **Money-Saving Features**
 - **Smart Irrigation**: Save water and money by timing irrigation perfectly
@@ -92,13 +86,9 @@ This hook speaks directly to every farmer's heart – it's about saving money, p
 
 ![Monsoon Mitra Architecture](assets/architecture_mitr.png)
 
-*Our system is designed like a farmer's trusted advisor – always available, always reliable, always helpful.*
-
 ### 🧭 **User Journey Flow**
 
 ![Monsoon Mitra Flowchart](assets/flowchart_mitr.jpeg)
-
-*From opening the app to getting actionable advice – every step is designed with farmers in mind.*
 
 ### 🔄 **The Process**
 1. **Location Detection**: Automatically finds your farm's location
@@ -110,7 +100,7 @@ This hook speaks directly to every farmer's heart – it's about saving money, p
 
 ---
 
-## 🛠️ Technical Excellence
+## 🛠️ Technical Stack
 
 ### **Frontend Technology**
 - **React + Vite**: Fast, modern, and reliable
@@ -304,31 +294,31 @@ window.askAI('मौसम कैसा है?')    // Ask AI in Hindi
 
 ## 🔮 Future Upgrades & Roadmap
 
-### **Phase 1: Enhanced Intelligence (Q2 2024)**
+### **Phase 1: Enhanced Intelligence (Q3 2025)**
 - **Soil Moisture Sensors**: Integration with IoT devices
 - **Crop Disease Detection**: AI-powered disease identification
 - **Market Price Predictions**: Help farmers get better prices
 - **Community Features**: Farmer-to-farmer advice sharing
 
-### **Phase 2: Advanced Analytics (Q3 2024)**
+### **Phase 2: Advanced Analytics (Q4 2025)**
 - **Historical Data Analysis**: Learn from past seasons
 - **Yield Predictions**: Estimate crop yields
 - **Financial Planning**: Budget and expense tracking
 - **Weather Pattern Learning**: Better predictions over time
 
-### **Phase 3: Ecosystem Integration (Q4 2024)**
+### **Phase 3: Ecosystem Integration (2026)**
 - **Government Scheme Alerts**: Stay informed about subsidies
 - **Insurance Integration**: Easy crop insurance management
 - **Supply Chain Connect**: Direct buyer-seller connections
 - **Educational Content**: Farming best practices and tutorials
 
-### **Phase 4: AI-Powered Farming (2025)**
+### **Phase 4: AI-Powered Farming (2026)**
 - **Autonomous Irrigation**: Smart irrigation systems
 - **Drone Integration**: Aerial crop monitoring
 - **Predictive Maintenance**: Equipment maintenance alerts
 - **Climate Adaptation**: Long-term climate change strategies
 
-### **Phase 5: Global Expansion (2025+)**
+### **Phase 5: Global Expansion (2026+)**
 - **Multi-Country Support**: Expand beyond India
 - **Advanced Languages**: Support for more regional languages
 - **Local Partnerships**: Collaborate with local agricultural bodies
@@ -391,6 +381,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Connect With Us
 
 - **Website**: https://monsoonmitra.vercel.app
+- **Linkedin**: www.linkedin.com/in/m-s-abhishek22
 - **GitHub**: https://github.com/MSAbhishek22/Monsoon_Mitr
 - **Issues**: Report bugs and request features
 - **Discussions**: Share ideas and connect with other farmers
