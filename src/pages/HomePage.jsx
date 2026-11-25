@@ -8,6 +8,7 @@ import { getWeatherCondition } from '../api/weather';
 import FarmerHook from '../components/FarmerHook';
 import SavingsTracker from '../components/SavingsTracker';
 import ForecastStrip from '../components/weather/ForecastStrip';
+import Hero3D from '../components/Hero3D';
 import { WeatherCardSkeleton, ForecastStripSkeleton } from '../components/common/LoadingSpinner';
 import { getIrrigationDecision } from '../utils/irrigationLogic';
 
@@ -64,9 +65,11 @@ export default function HomePage() {
 
       {/* Greeting Card */}
       <div
-        className="mt-4 rounded-[20px] p-5 animate-slide-down"
+        className="relative mt-4 rounded-[20px] p-5 animate-slide-down overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #2E7D32 0%, #388E3C 50%, #1B5E20 100%)', boxShadow: '0 8px 24px rgba(46,125,50,0.3)' }}
       >
+        <Hero3D className="absolute inset-0" label="3D monsoon cloud over the field — drag to spin" />
+        <div className="relative">
         <p style={{ fontSize: '24px', fontWeight: 800, color: '#FFFFFF', margin: 0 }}>
           {greeting}{userName ? `, ${userName} जी` : '!'} {greetingEmoji}
         </p>
@@ -79,6 +82,8 @@ export default function HomePage() {
             <p className="text-sm text-white/85 mt-1">{condition}</p>
           </div>
           <span className="text-5xl">{weatherEmoji}</span>
+        </div>
+        <p className="text-[11px] text-white/70 mt-3">👆 खींचकर घुमाएँ · नीचे स्क्रॉल करें — आज का हाल</p>
         </div>
       </div>
 

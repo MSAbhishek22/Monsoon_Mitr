@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { trackEvent, EVENTS } from '../../firebase/analytics';
+import Hero3D from '../Hero3D';
 
 export default function SplashScreen({ onComplete }) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -22,7 +23,8 @@ export default function SplashScreen({ onComplete }) {
       className={`fixed inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}
       style={{ background: 'linear-gradient(180deg, #1B5E20 0%, #2E7D32 100%)', zIndex: 9999 }}
     >
-      <div className="flex flex-col items-center gap-6">
+      <Hero3D className="absolute inset-0" label="3D monsoon cloud on the splash screen — drag to spin" />
+      <div className="relative flex flex-col items-center gap-6" style={{ zIndex: 1 }}>
         <span className="animate-wave" style={{ fontSize: '72px', lineHeight: 1 }}>🌾</span>
 
         <div className="text-center animate-fade-in" style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
